@@ -175,15 +175,16 @@
 %-------------------------------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{60pt}{1em}\headerfontlight\color{graytext} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{60pt}{1em}\headerfont\bfseries\color{text} #1}}
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{60pt}{1em}\headerfont\color{text} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{60pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerpositionstyle}[1]{{\vspace{2mm}\fontsize{16pt}{1em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\vspace{1mm}\fontsize{10pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
 
 \newcommand*{\headersummarystyle}[1]{%
-  {\fontsize{10.2pt}{1em}\bodyfontlight\color{darktext}%
+  {\fontsize{10pt}{1em}\bodyfontlight\color{darktext}%
     \begin{justify}%
+      \setstretch{0.85} 
       #1%
     \end{justify}%
   }%
