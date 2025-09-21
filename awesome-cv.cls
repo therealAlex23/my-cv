@@ -46,6 +46,7 @@
 %-------------------------------------------------------------------------------
 %                3rd party packages
 %-------------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
 % Needed to make fixed length table
 \RequirePackage{array}
 % Needed to handle list environment
@@ -152,10 +153,10 @@
 
 % Boolean value to switch section color highlighting
 \newbool{acvSectionColorHighlight}
-\setbool{acvSectionColorHighlight}{true}
+\setbool{acvSectionColorHighlight}{false}
 
 % Awesome section color
-\def\@sectioncolor#1#2#3{%
+ \def\@sectioncolor#1#2#3{%
   \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}%
 }
 
@@ -174,23 +175,30 @@
 %-------------------------------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
-\newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome} #1}}
-\newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{60pt}{1em}\headerfontlight\color{graytext} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{60pt}{1em}\headerfont\bfseries\color{text} #1}}
+\newcommand*{\headerpositionstyle}[1]{{\vspace{2mm}\fontsize{16pt}{1em}\bodyfont\scshape\color{awesome} #1}}
+\newcommand*{\headeraddressstyle}[1]{{\vspace{1mm}\fontsize{10pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
-\newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
+
+\newcommand*{\headersummarystyle}[1]{%
+  {\fontsize{10.2pt}{1em}\bodyfontlight\color{darktext}%
+    \begin{justify}%
+      #1%
+    \end{justify}%
+  }%
+}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
-\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text} #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
 
 % For elements of entry
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{13pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\scshape\color{graytext} #1}}
+\newcommand*{\entrydatestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+\newcommand*{\descriptionstyle}[1]{{\fontsize{9.7pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
@@ -210,7 +218,7 @@
 \newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
 
 % For elements of the cover letter
-\newcommand*{\lettersectionstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
+\newcommand*{\lettersectionstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\bfseries\color{text}}}
 \newcommand*{\recipientaddressstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 \newcommand*{\recipienttitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\lettertitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\bfseries\color{darktext} \underline{#1}}}
@@ -371,7 +379,7 @@
 
 % Defines writer's quote (optional)
 % Usage: \quote{<quote>}
-\renewcommand*{\quote}[1]{\def\@quote{#1}}
+\newcommand*{\summary}[1]{\def\@summary{#1}}
 
 % Defines recipient's information (cover letter only)
 % Usage: \recipient{<recipient name>}{<recipient address>}
@@ -418,13 +426,15 @@
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
 \newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-\newcommand{\acvHeaderAfterSocialSkip}{6mm}
-\newcommand{\acvHeaderAfterQuoteSkip}{5mm}
+\newcommand{\acvHeaderAfterSocialSkip}{5mm}
+\newcommand{\acvHeaderAfterSummarySkip}{0mm}
+\newcommand{\acvSectionAfterItemSkip}{0.5ex}
 
 % Others
-\newcommand{\acvSectionTopSkip}{3mm}
-\newcommand{\acvSectionContentTopSkip}{2.5mm}
-
+\newcommand{\acvSectionTopSkip}{0mm}
+\newcommand{\acvSectionContentTopSkip}{1.7mm}
+\definecolor{bordeaux}{HTML}{7b002c} % ou substitui pelo HEX que preferires
+\newcommand{\highlight}[1]{\textcolor{awesome}{#1}}
 
 %-------------------------------------------------------------------------------
 %                Commands for utilities
@@ -478,7 +488,7 @@
     \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
     \\[\acvHeaderAfterNameSkip]%
     \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
-    \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
+%    \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
     \headersocialstyle{%
       \newbool{isstart}%
       \setbool{isstart}{true}%
@@ -493,6 +503,12 @@
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{mailto:\@email}{\faEnvelope\acvHeaderIconSep\@email}%
+        }%
+      \ifthenelse{\isundefined{\@address}}%
+        {}%
+        {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          {\faMapMarker\acvHeaderIconSep\@address}%
         }%
       \ifthenelse{\isundefined{\@dateofbirth}}%
         {}%
@@ -616,9 +632,9 @@
           \@extrainfo%
         }%
     } \\[\acvHeaderAfterSocialSkip]%
-    \ifthenelse{\isundefined{\@quote}}%
+    \ifthenelse{\isundefined{\@summary}}%
       {}%
-      {\headerquotestyle{\@quote\\}\vspace{\acvHeaderAfterQuoteSkip}}%
+      {\headersummarystyle{\@summary\\}\vspace{\acvHeaderAfterSummarySkip}}%
   \end{minipage}%
   \begin{minipage}[c]{\headerphotowidth}%
     \ifthenelse{\equal{\@photoalign}{right}}{\raggedleft\drawphoto}{}
@@ -750,13 +766,13 @@
 \newenvironment{cvitems}{%
   \vspace{-4.0mm}
   \begin{justify}
-  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+  \begin{itemize}[leftmargin=2ex,  itemsep=\acvSectionAfterItemSkip]
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-4.0mm}
+  \vspace{-2.0mm}
 }
 
 

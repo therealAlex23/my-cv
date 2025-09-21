@@ -1,47 +1,30 @@
-<h1 align="center">
-  <a href="https://github.com/posquit0/Awesome-CV" title="AwesomeCV Documentation">
-    <img alt="AwesomeCV" src="https://github.com/posquit0/Awesome-CV/raw/master/icon.png" width="200px" height="200px" />
-  </a>
-  <br />
-  Awesome CV
-</h1>
+**Estrutura da frase** - Verbo de ação + O que fez + Resultado quantificado
 
-<p align="center">
-  LaTeX template for your outstanding job application
-</p>
+✅ **Sempre fazer:**
+- **Quantificar**: Use números, percentagens, valores monetários
+- **Verbos fortes**: Desenvolveu, Implementou, Otimizou, Reduziu, Liderou
+- **Especificar tecnologias**: Mencione linguagens, frameworks, ferramentas
+- **Mostrar impacto**: Conecte trabalho técnico com resultados empresariais
 
-<div align="center">
-  <a href="https://www.paypal.me/posquit0">
-    <img alt="Donate" src="https://img.shields.io/badge/Donate-PayPal-blue.svg" />
-  </a>
-  <a href="https://github.com/posquit0/Awesome-CV/actions/workflows/main.yml">
-    <img alt="GitHub Actions" src="https://github.com/posquit0/Awesome-CV/actions/workflows/main.yml/badge.svg" />
-  </a>
-  <a href="https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume.pdf">
-    <img alt="Example Resume" src="https://img.shields.io/badge/resume-pdf-green.svg" />
-  </a>
-  <a href="https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/cv.pdf">
-    <img alt="Example CV" src="https://img.shields.io/badge/cv-pdf-green.svg" />
-  </a>
-  <a href="https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf">
-    <img alt="Example Coverletter" src="https://img.shields.io/badge/coverletter-pdf-green.svg" />
-  </a>
-</div>
+❌ **Evitar:**
+- Linguagem vaga ("várias", "muitos", "significativo")
+- Começar com "Responsável por..."
+- Listar tarefas sem mostrar impacto
 
-<br />
+Exemplo Prático
+- **Antes:** Responsável por melhorar a performance do sistema
+- **Depois:** Otimizou algoritmos críticos em C++, reduzindo tempo de processamento em 40% e poupando €25,000 anuais
+
+*Checklist Final*
+- [ ] Tem números/métricas?
+- [ ] Mostra impacto empresarial?
+- [ ] Usa verbo de ação forte?
+- [ ] Especifica tecnologias relevantes?
+- [ ] É claro e conciso?
 
 ## What is Awesome CV?
 
 **Awesome CV** is LaTeX template for a **CV(Curriculum Vitae)**, **Résumé** or **Cover Letter** inspired by [Fancy CV](https://www.sharelatex.com/templates/cv-or-resume/fancy-cv). It is easy to customize your own template, especially since it is really written by a clean, semantic markup.
-
-
-## Donate
-
-Please help keep this project alive! Donations are welcome and will go towards further development of this project.
-
-    PayPal: paypal.me/posquit0
-
-*Thank you for your support!*
 
 ## Preview
 
@@ -115,12 +98,3 @@ If you have any questions, feel free to join me at [`#posquit0` on Freenode](irc
 
 Good luck!
 
-
-## Maintainers
-- [posquit0](https://github.com/posquit0)
-- [OJFord](https://github.com/OJFord)
-
-
-## See Also
-
-* [Awesome Identity](https://github.com/posquit0/hugo-awesome-identity) - A single-page Hugo theme to introduce yourself.
