@@ -78,6 +78,7 @@
 % Needed to use icons from font-awesome
 \RequirePackage{fontawesome5}
 \RequirePackage{roboto}
+\newfontfamily\helvetafont{Helvetica}
 \RequirePackage[default,opentype]{sourcesanspro}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
@@ -164,11 +165,12 @@
 %-------------------------------------------------------------------------------
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
-\newcommand*{\headerfont}{\roboto}
+
+\newcommand*{\headerfont}{\sourcesanspro}
 \newcommand*{\headerfontlight}{\robotolight}
 \newcommand*{\footerfont}{\sourcesanspro}
 \newcommand*{\bodyfont}{\sourcesanspro}
-\newcommand*{\bodyfontlight}{\sourcesansprolight}
+\newcommand*{\bodyfontlight}{\sourcesanspro}
 
 %-------------------------------------------------------------------------------
 %                Configuration for styles
@@ -177,9 +179,9 @@
 % For fundamental structures
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{60pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{60pt}{1em}\headerfont\color{text} #1}}
-\newcommand*{\headerpositionstyle}[1]{{\vspace{2mm}\fontsize{16pt}{1em}\bodyfont\scshape\color{awesome} #1}}
+\newcommand*{\headerpositionstyle}[1]{{\vspace{2mm}\fontsize{20pt}{1em}\bodyfont\scshape\color{awesome} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\vspace{1mm}\fontsize{10pt}{1em}\headerfont\itshape\color{lighttext} #1}}
-\newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
+\newcommand*{\headersocialstyle}[1]{{\fontsize{10pt}{1em}\headerfont\color{text} #1}}
 
 \newcommand*{\headersummarystyle}[1]{%
   {\fontsize{10pt}{1em}\bodyfontlight\color{darktext}%
@@ -195,11 +197,12 @@
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
 
 % For elements of entry
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{13pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{12.5pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\entrypositionstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\scshape\color{graytext} #1}}
+\newcommand*{\entryprojectstyle}[1]{{\fontsize{10.2pt}{1em}\bodyfont\itshape\color{darkgray} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{9.7pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\descriptionstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
@@ -240,7 +243,7 @@
     \ifthenelse{\equal{\tmp}{circle} \or \equal{\tmp}{rectangle}}%
       {\let\@photoshape\tmp}{}%
     \ifthenelse{\equal{\tmp}{edge} \or \equal{\tmp}{noedge}}%
-      {\let\@photoedge\tmp}{}%
+      {\let\@photoedge/\tmp}{}%
     \ifthenelse{\equal{\tmp}{left} \or \equal{\tmp}{right}}%
       {\let\@photoalign\tmp}{}%
   }%
@@ -426,9 +429,9 @@
 \newcommand{\acvHeaderAfterPositionSkip}{.4mm}
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
-\newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-\newcommand{\acvHeaderAfterSocialSkip}{5mm}
-\newcommand{\acvHeaderAfterSummarySkip}{0mm}
+\newcommand{\acvHeaderSocialSep}{\textbar}
+\newcommand{\acvHeaderAfterSocialSkip}{3mm}
+\newcommand{\acvHeaderAfterSummarySkip}{-2mm}
 \newcommand{\acvSectionAfterItemSkip}{0.5ex}
 
 % Others
@@ -496,20 +499,20 @@
       \ifthenelse{\isundefined{\@mobile}}%
         {}%
         {%
-          \href{\@teluri}{\faMobile\acvHeaderIconSep\@mobile}%
+          \href{\@teluri}{\acvHeaderIconSep\@mobile}%
           \setbool{isstart}{false}%
         }%
       \ifthenelse{\isundefined{\@email}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{mailto:\@email}{\faEnvelope\acvHeaderIconSep\@email}%
+          \href{mailto:\@email}{\acvHeaderIconSep\@email}%
         }%
       \ifthenelse{\isundefined{\@address}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          {\faMapMarker\acvHeaderIconSep\@address}%
+          {\acvHeaderIconSep\@address}%
         }%
       \ifthenelse{\isundefined{\@dateofbirth}}%
         {}%
@@ -528,7 +531,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
+          \href{https://github.com/\@github}{\acvHeaderIconSep github/\@github}%
         }%
       \ifthenelse{\isundefined{\@gitlab}}%
         {}%
@@ -552,7 +555,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedin\acvHeaderIconSep\@linkedin}%
+          \href{https://www.linkedin.com/in/\@linkedin}{\acvHeaderIconSep linkedin/\@linkedin}%
         }%
       \ifthenelse{\isundefined{\@orcid}}%
         {}%
@@ -686,9 +689,10 @@
 }{%
   \end{center}
 }
-% Define an entry of cv information
-% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
-\newcommand*{\cventry}[5]{%
+
+% Define an entry of cv information with a project description
+% Usage: \cventryproject{<position>}{<title>}{<location>}{<date>}{<project_description>}{<description>}
+\newcommand*{\cventry}[6]{%
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
@@ -697,10 +701,30 @@
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+    % --- Nova secção para o Projeto ---
     \ifstrempty{#5}
       {}
-      {\multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}} \\}
+      {\multicolumn{2}{L{\textwidth}}{\descriptionstyle{\entryprojectstyle{#5}}}} \\
+    % --- Secção normal para os bullet-points ---
+    \ifstrempty{#6}
+      {}
+      {\multicolumn{2}{L{\textwidth}}{\vspace{1.0mm}\descriptionstyle{#6}} \\}
   \end{tabular*}%
+}
+
+% Define an entry of education information without descriptions
+% Usage: \cveducation{<degree>}{<institution>}{<location>}{<date>}
+\newcommand*{\cveducation}[4]{%
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \ifempty{#2#3}
+      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+  \end{tabular*}%
+  \vspace{0.0mm} % Espaço extra no final da entry (podes aumentar para 1.0mm se as entries da educação ficarem demasiado coladas umas às outras)
 }
 
 % Define an environment for cvsubentry
