@@ -179,7 +179,7 @@
 % For fundamental structures
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{60pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{60pt}{1em}\headerfont\color{text} #1}}
-\newcommand*{\headerpositionstyle}[1]{{\vspace{2mm}\fontsize{20pt}{1em}\bodyfont\scshape\color{awesome} #1}}
+\newcommand*{\headerpositionstyle}[1]{{\vspace{2mm}\fontsize{20pt}{1em}\bodyfont\scshape\color{awesome-darknight} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\vspace{1mm}\fontsize{10pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{10pt}{1em}\headerfont\color{text} #1}}
 
