@@ -179,7 +179,7 @@
 % For fundamental structures
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{50pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{50pt}{1em}\headerfont\color{text} #1}}
-\newcommand*{\headerpositionstyle}[1]{{\vspace{2mm}\fontsize{20pt}{1em}\bodyfont\scshape\color{awesome-darknight} #1}}
+\newcommand*{\headerpositionstyle}[1]{{\vspace{2mm}\fontsize{18pt}{1em}\bodyfont\scshape\color{awesome-darknight} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\vspace{1mm}\fontsize{10pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{10pt}{1em}\headerfont\color{text} #1}}
 
@@ -198,7 +198,7 @@
 
 % For elements of entry
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{10.5pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{10.2pt}{1em}\bodyfont\scshape\color{graytext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{10.5pt}{1em}\bodyfont\scshape\color{awesome-darknight} #1}}
 \newcommand*{\entryprojectstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\itshape\color{darkgray} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
@@ -425,8 +425,8 @@
 %% Define helper macros a user can change easily
 % Header
 \newcommand{\acvHeaderNameDelim}{\space}
-\newcommand{\acvHeaderAfterNameSkip}{.4mm}
-\newcommand{\acvHeaderAfterPositionSkip}{.4mm}
+\newcommand{\acvHeaderAfterNameSkip}{.5mm}
+\newcommand{\acvHeaderAfterPositionSkip}{3mm}
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
 \newcommand{\acvHeaderSocialSep}{\textbar}
