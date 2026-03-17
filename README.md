@@ -1,3 +1,5 @@
+## How-to-CV (work in progress)
+
 **Estrutura da frase** - Verbo de ação + O que fez + Resultado quantificado
 
 ✅ **Sempre fazer:**
@@ -25,12 +27,6 @@ Exemplo Prático
 ## What is Awesome CV?
 
 **Awesome CV** is LaTeX template for a **CV(Curriculum Vitae)**, **Résumé** or **Cover Letter** inspired by [Fancy CV](https://www.sharelatex.com/templates/cv-or-resume/fancy-cv). It is easy to customize your own template, especially since it is really written by a clean, semantic markup.
-
-## Preview
-
-#### CV
-
-See [PDF](examples/cv.pdf)
 
 ## Quick Start
 
