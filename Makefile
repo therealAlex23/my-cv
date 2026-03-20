@@ -17,7 +17,7 @@ cv: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
 	$(CC) -output-directory=$(EXAMPLES_DIR) $<
 
 updatecv:
-	cp examples/cv.pdf	$(CV_FINAL_DIR)/cv_last.pdf
+	cp examples/cv.pdf	$(CV_FINAL_DIR)/CV_AlexandreSantos.pdf
 
 coverletter: $(EXAMPLES_DIR)/coverletter.tex
 	$(CC) -output-directory=$(EXAMPLES_DIR) $<
