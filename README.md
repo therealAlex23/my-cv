@@ -1,3 +1,6 @@
+## TODO
+- Mencionar: ARINC, FPGA, Protocolos
+
 ## How-to-CV (work in progress)
 
 **Estrutura da frase** - Verbo de ação + O que fez + Resultado quantificado
