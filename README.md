@@ -1,5 +1,5 @@
 ## TODO
-- CFT: Mencionar ARINC, FPGA, Protocolos, dizer mais ativdsdes que fiz; 
+- CFT: Mencionar ARINC, FPGA, Protocolos, dizer mais ativdsdes que fiz; Especificsr HW (tipo PN)
 - TTW: dar mais info
 - Header position: Retirar "Systems"
 
