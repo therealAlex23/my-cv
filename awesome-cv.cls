@@ -78,7 +78,6 @@
 % Needed to use icons from font-awesome
 \RequirePackage{fontawesome5}
 \RequirePackage{roboto}
-\newfontfamily\helvetafont{Helvetica}
 \RequirePackage[default,opentype]{sourcesanspro}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}

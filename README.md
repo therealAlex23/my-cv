@@ -1,7 +1,8 @@
 ## TODO
 - CFT: Mencionar ARINC, FPGA, Protocolos, dizer mais ativdsdes que fiz; Especificsr HW (tipo PN)
 - TTW: dar mais info
-- Header position: Retirar "Systems"
+- Change examples folder name and the respective places where it's being mentioned 
+- Update README.MD to include a HOW-TO for users
 
 ## How-to-CV (work in progress)
 
