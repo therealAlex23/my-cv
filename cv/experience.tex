@@ -21,10 +21,10 @@
     \begin{cvitems} % Description(s) of tasks/responsibilities
 	\item {Engineered Design Assurance Level A and D critical flight software components operating on Real-Time Operating Systems (RTOS), in compliance with DO-178C and DO-330 standards following a V-Model lifecycle. Successfully contributed to major releases, including one achieving Stage of Involvement 3 (SOI-3) certification;}
 	\item {Designed and implemented low-level features, such as Aircraft on Ground conditions based on digital signal processing, written in C according to MISRA and compiled with the CompCert formally verified compiler;}
-	\item {Managed direct hardware interactions and memory configurations, implementing Direct Memory Access (DMA) transfers and Memory Management Unit (MMU) settings to ensure precise, static memory allocation;}
-	\item {Performed formal mathematical verifications (Unit Proof) based on Frama-C/ACSL contracts, alongside automated integration testing using Robot Framework with embedded Remote Procedure Call (eRPC) stubs;}
+	\item {Implemented DMA transfers to mirror physical data to resources in a periodic monitoring task; defined MMU pages with permissions and sizes based on the overall mapping for dedicated memory sections to applications and BMIs, and updated linker scripts to ensure precise static allocation;}
+	\item {Performed formal mathematical verifications (Unit Proof) based on Frama-C/ACSL contracts, alongside integration testing using Robot Framework with eRPC stubs to flash the Firmware/Software and stimulate hardware interfaces.}
 	\item {Conducted in-depth hardware and memory debugging via TRACE32 to troubleshoot radiation effect statistics and flight data storage issues, while utilizing Wireshark for network packet analysis;}
-	\item {Accelerated development workflows by engineering custom Python and Bash scripts for local process automation.}
+	\item {Accelerated development workflows by engineering custom Python and Shell scripts for local process automation.}
       \end{cvitems}
     }
 
